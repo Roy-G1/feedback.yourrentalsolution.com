@@ -1,0 +1,84 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Share private feedback | Solutions Property Management</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#f7f7f7;color:#111}
+  .wrap{max-width:840px;margin:0 auto;padding:40px 20px}
+  header{text-align:center;margin-bottom:16px}
+  h1{font-size:26px;margin:8px 0}
+  .frame{background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);overflow:hidden;padding:24px}
+  label{display:block;margin:14px 0 6px}
+  input[type=text], input[type=email], textarea, select{
+    width:100%; padding:12px; border:1px solid #ddd; border-radius:10px; font-size:16px;
+  }
+  textarea{min-height:140px}
+  .row{display:grid;gap:12px}
+  @media(min-width:640px){.row{grid-template-columns:1fr 1fr}}
+  .actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+  .btn{appearance:none;border:0;border-radius:10px;padding:12px 16px;cursor:pointer;font-size:16px}
+  .primary{background:#0f6fff;color:#fff}
+  .ghost{background:#fff;border:1px solid #ddd}
+  .foot{text-align:center;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a href="/">← Back</a>
+    <h1>Tell us what happened</h1>
+    <p>We read every message and follow up when requested.</p>
+  </header>
+
+  <div class="frame">
+    <!-- Free email endpoint via formsubmit.co -->
+    <form action="https://formsubmit.co/help@storagemgmtsolutions.com" method="POST">
+      <!-- Hidden options -->
+      <input type="hidden" name="_subject" value="New Service Feedback — Needs improvement">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="/thankyou">
+      <input type="hidden" name="Sentiment" value="Needs improvement">
+
+      <label for="service">What was the service we provided?</label>
+      <select id="service" name="Service provided" required>
+        <option value="">Select one…</option>
+        <option>Maintenance — Plumbing</option>
+        <option>Maintenance — Electrical</option>
+        <option>Maintenance — HVAC</option>
+        <option>Maintenance — Appliance</option>
+        <option>Doors/Locks</option>
+        <option>Pest control</option>
+        <option>Leasing — Application/Approval</option>
+        <option>Showing / Tour</option>
+        <option>Move-in</option>
+        <option>Move-out</option>
+        <option>Billing / Payments</option>
+        <option>Grounds / Snow</option>
+        <option>Other</option>
+      </select>
+
+      <label for="happened">What happened?</label>
+      <textarea id="happened" name="What happened?" required></textarea>
+
+      <div class="row">
+        <div>
+          <label>May we contact you to follow up?</label>
+          <label><input type="radio" name="OK to contact" value="Yes" required> Yes</label>
+          <label><input type="radio" name="OK to contact" value="No" required> No</label>
+        </div>
+        <div>
+          <label for="contact">Your name & best contact info (optional)</label>
+          <input id="contact" type="text" name="Name & best contact">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn primary" type="submit">Send feedback</button>
+        <a class="btn ghost" href="https://g.page/r/CUdrkKDLQTSFEAg/review">Or post a public review</a>
+      </div>
+    </form>
+  </div>
+
+  <p class="foot">Prefer to post a public review? <a href="https://g.page/r/CUdrkKDLQTSFEAg/review">Review us on Google</a></p>
+</div>
+</body></html>
