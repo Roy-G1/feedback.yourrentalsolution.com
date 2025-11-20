@@ -23,23 +23,21 @@
 <body>
 <div class="wrap">
   <header>
-    <a class="back" href="./">← Back</a>
+    <a class="back" href="#" onclick="return goHome()">← Back</a>
     <img src="logo.png" alt="Solutions Property Management" class="logo">
     <h1>Tell us what happened</h1>
     <p>We read every message and follow up when requested.</p>
   </header>
 
   <div class="card">
-    <!-- Sends email to help@storagemgmtsolutions.com via FormSubmit (free) -->
+    <!-- Emails to help@storagemgmtsolutions.com via FormSubmit (free) -->
     <form action="https://formsubmit.co/help@storagemgmtsolutions.com" method="POST">
-      <!-- Hidden settings -->
       <input type="hidden" name="_subject" value="New Service Feedback — Needs improvement">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-      <!-- Return to your live GitHub Pages thank-you URL -->
+      <!-- Redirect to your thank-you page (update to custom domain later) -->
       <input type="hidden" name="_next" value="https://roy-g1.github.io/feedback.yourrentalsolution.com/thankyou">
       <input type="hidden" name="Sentiment" value="Needs improvement">
-      <!-- Simple bot trap -->
       <input type="text" name="_honey" style="display:none">
 
       <label for="msg">Your feedback</label>
@@ -55,5 +53,14 @@
     </form>
   </div>
 </div>
+
+<script>
+  // Back → site root (e.g., /feedback.yourrentalsolution.com/)
+  function goHome() {
+    var home = location.pathname.replace(/\/[^\/]*$/, '/');
+    location.href = home;
+    return false;
+  }
+</script>
 </body>
 </html>
