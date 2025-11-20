@@ -1,20 +1,22 @@
-<!doctype html><html lang="en"><head>
+<!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Share private feedback | Solutions Property Management</title>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <style>
   body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#f7f7f7;color:#111}
   .wrap{max-width:720px;margin:0 auto;padding:40px 20px}
   header{text-align:center;margin-bottom:16px}
   h1{font-size:26px;margin:8px 0}
+  .logo{max-width:220px;height:auto;margin:8px 0 4px}
   .card{background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);padding:24px}
   label{display:block;margin:10px 0 6px}
   textarea{width:100%;min-height:160px;padding:12px;border:1px solid #ddd;border-radius:10px;font-size:16px}
-  <label for="contact">Name & best contact (optional)</label>
-<input id="contact" type="text" name="Name & best contact" placeholder="e.g., Jane — 605-555-1234 or jane@email.com">
+  input[type=text]{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;font-size:16px}
   .actions{margin-top:12px}
   .btn{appearance:none;border:0;border-radius:10px;padding:12px 16px;cursor:pointer;font-size:16px;background:#0f6fff;color:#fff}
-  .logo{max-width:200px;height:auto;margin:8px 0 4px}
   .back{display:inline-block;margin-bottom:6px;text-decoration:none}
 </style>
 </head>
@@ -22,14 +24,13 @@
 <div class="wrap">
   <header>
     <a class="back" href="./">← Back</a>
-    <!-- If you uploaded logo.png, keep this line; otherwise delete it -->
     <img src="logo.png" alt="Solutions Property Management" class="logo">
     <h1>Tell us what happened</h1>
     <p>We read every message and follow up when requested.</p>
   </header>
 
   <div class="card">
-    <!-- Emails to help@storagemgmtsolutions.com via FormSubmit (free) -->
+    <!-- Sends email to help@storagemgmtsolutions.com via FormSubmit (free) -->
     <form action="https://formsubmit.co/help@storagemgmtsolutions.com" method="POST">
       <!-- Hidden settings -->
       <input type="hidden" name="_subject" value="New Service Feedback — Needs improvement">
@@ -44,10 +45,15 @@
       <label for="msg">Your feedback</label>
       <textarea id="msg" name="Feedback" required placeholder="Type your message here..."></textarea>
 
+      <label for="contact">Name & best contact (optional)</label>
+      <input id="contact" type="text" name="Name & best contact"
+             placeholder="e.g., Jane — 605-555-1234 or jane@email.com">
+
       <div class="actions">
         <button class="btn" type="submit">Send feedback</button>
       </div>
     </form>
   </div>
 </div>
-</body></html>
+</body>
+</html>
