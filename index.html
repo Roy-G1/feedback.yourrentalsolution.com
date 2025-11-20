@@ -3,45 +3,48 @@
 <title>How was your experience? | Solutions Property Management</title>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <style>
+  :root{--green:#16a34a;--orange:#f59e0b}
   body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#f7f7f7;color:#111}
   .wrap{max-width:720px;margin:0 auto;padding:40px 20px}
   header{text-align:center;margin-bottom:20px}
-  h1{font-size:28px;margin:8px 0} .sub{color:#555}
-  .grid{display:grid;gap:16px;margin-top:24px}
-  @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
-  .card{background:#fff;border-radius:16px;padding:24px;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.08)}
-  .emoji{font-size:44px}
-  .btn{display:block;margin-top:12px;padding:14px 16px;border-radius:12px;text-decoration:none;border:1px solid #ddd}
-  .primary{background:#0f6fff;color:#fff;border-color:#0f6fff}
-  footer{margin-top:28px;text-align:center;color:#666;font-size:12px}
   .logo{max-width:220px;height:auto}
+  h1{font-size:28px;margin:12px 0} .sub{color:#555}
+  .faces{display:grid;gap:16px;margin-top:24px}
+  @media(min-width:640px){.faces{grid-template-columns:1fr 1fr}}
+  .face{display:flex;flex-direction:column;align-items:center;justify-content:center;
+        background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);
+        padding:32px;text-decoration:none;outline:none}
+  .emoji{font-size:68px;line-height:1}
+  .caption{margin-top:10px;font-size:16px;color:#111}
+  .good .emoji{color:var(--green)}
+  .bad .emoji{color:var(--orange)}
+  .face:focus-visible{box-shadow:0 0 0 3px rgba(15,111,255,.35)}
+  footer{margin-top:28px;text-align:center;color:#666;font-size:12px}
 </style>
-</head><body>
-<div class="wrap">
-  <header>
-    <img src="logo.png" alt="Solutions Property Management" class="logo">
-    <h1>How was your experience?</h1>
-    <p class="sub">Tap an option to continue.</p>
-  </header>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <!-- If you uploaded logo.png, keep this line; otherwise delete it -->
+      <img src="logo.png" alt="Solutions Property Management" class="logo">
+      <h1>How was your experience?</h1>
+      <p class="sub">Tap an option to continue.</p>
+    </header>
 
-  <section class="grid">
-    <!-- 🙂 Satisfied → Google Reviews -->
-    <div class="card" role="group" aria-label="Satisfied">
-      <div class="emoji" aria-hidden="true">🙂</div>
-      <h3 style="margin:10px 0 0">Satisfied</h3>
-      <a class="btn primary" href="https://g.page/r/CUdrkKDLQTSFEAg/review">Review us on Google</a>
-      <a class="btn" href="/feedback">Prefer to tell us privately?</a>
-    </div>
+    <section class="faces">
+      <!-- 🙂 green → Google review -->
+      <a class="face good" href="https://g.page/r/CUdrkKDLQTSFEAg/review" aria-label="Satisfied — leave a Google review">
+        <span class="emoji" aria-hidden="true">🙂</span>
+        <span class="caption">Satisfied</span>
+      </a>
 
-    <!-- 😞 Needs improvement → Feedback form (emails you) -->
-    <div class="card" role="group" aria-label="Needs improvement">
-      <div class="emoji" aria-hidden="true">😞</div>
-      <h3 style="margin:10px 0 0">Needs improvement</h3>
-      <a class="btn primary" href="/feedback">Share private feedback</a>
-      <a class="btn" href="https://g.page/r/CUdrkKDLQTSFEAg/review">Or post a public review</a>
-    </div>
-  </section>
+      <!-- 😞 orange → feedback page that emails you -->
+      <a class="face bad" href="/feedback" aria-label="Needs improvement — tell us what happened">
+        <span class="emoji" aria-hidden="true">😞</span>
+        <span class="caption">Needs improvement</span>
+      </a>
+    </section>
 
-  <footer>(605) 988-8496 • 517 W. 22nd Street, Sioux Falls, SD 57105</footer>
-</div>
+    <footer>(605) 988-8496 • 517 W. 22nd Street, Sioux Falls, SD 57105</footer>
+  </div>
 </body></html>
