@@ -6,25 +6,21 @@
 <title>Share private feedback | Solutions Property Management</title>
 <link rel="icon" type="image/png" href="logo.png?v=1">
 <style>
-  /* Mobile-safe sizing */
   *,*::before,*::after{box-sizing:border-box}
   html,body{margin:0;padding:0;width:100%;overflow-x:hidden;background:#f7f7f7;color:#111;
             font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-
   .wrap{max-width:720px;margin:0 auto;padding:32px 16px}
   @media(min-width:768px){.wrap{padding:40px 20px}}
-
   header{text-align:center;margin-bottom:16px}
   .logo{max-width:220px;height:auto;margin:8px 0 4px}
   h1{font-size:26px;margin:8px 0}
-
   .card{background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);padding:20px}
   @media(min-width:480px){.card{padding:24px}}
-
   label{display:block;margin:10px 0 6px}
   textarea{width:100%;max-width:100%;min-height:160px;padding:12px;border:1px solid #ddd;border-radius:12px;font-size:16px}
   input[type=text]{width:100%;max-width:100%;padding:12px;border:1px solid #ddd;border-radius:12px;font-size:16px}
-
+  .row{display:grid;gap:10px}
+  @media(min-width:540px){.row{grid-template-columns:1fr 1fr}}
   .actions{margin-top:12px}
   .btn{width:100%;appearance:none;border:0;border-radius:12px;padding:14px 16px;cursor:pointer;font-size:16px;background:#0f6fff;color:#fff}
   @media(min-width:480px){.btn{width:auto}}
@@ -41,20 +37,29 @@
   </header>
 
   <div class="card">
-    <!-- Emails to help@storagemgmtsolutions.com via FormSubmit (free) -->
+    <!-- Sends to feedback@yourrentalsolution.com via FormSubmit -->
     <form id="fbForm" action="https://formsubmit.co/feedback@yourrentalsolution.com" method="POST">
       <input type="hidden" name="_subject" value="New Service Feedback — Needs improvement">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" id="nextUrl" name="_next" value="">
       <input type="hidden" name="Sentiment" value="Needs improvement">
+      <!-- simple bot trap -->
       <input type="text" name="_honey" style="display:none">
 
       <label for="msg">Your feedback</label>
       <textarea id="msg" name="Feedback" required placeholder="Type your message here..."></textarea>
 
-      <label for="contact">Name & best contact (optional)</label>
-      <input id="contact" type="text" name="Name & best contact" placeholder="e.g., Jane — 605-555-1234 or jane@email.com">
+      <div class="row">
+        <div>
+          <label for="name">Name (optional)</label>
+          <input id="name" type="text" name="Name" placeholder="e.g., Jane Doe">
+        </div>
+        <div>
+          <label for="contact">Best contact (phone or email)</label>
+          <input id="contact" type="text" name="Best contact" placeholder="e.g., 605-555-1234 or jane@email.com">
+        </div>
+      </div>
 
       <div class="actions">
         <button class="btn" type="submit">Send feedback</button>
@@ -67,8 +72,7 @@
   // Back → site root (works on github.io path and on custom domain)
   function goHome(){
     var home = location.pathname.replace(/\/[^\/]*$/, '/');
-    location.href = home;
-    return false;
+    location.href = home; return false;
   }
   // Set _next = absolute URL to /thankyou on the current site
   (function(){
