@@ -6,7 +6,12 @@
 <title>How was your experience? | Solutions Property Management</title>
 <link rel="icon" type="image/png" href="logo.png?v=1">
 <style>
-  :root{--green:#16a34a;--orange:#f59e0b;--gold1:#ffe08a;--gold2:#f59e0b}
+  :root{
+    --green:#16a34a;
+    --orange:#f59e0b;
+    --red1:#ff5252;   /* light brand red */
+    --red2:#d11111;   /* deep brand red */
+  }
   *,*::before,*::after{box-sizing:border-box}
   html,body{margin:0;padding:0;width:100%;overflow-x:hidden;background:#f7f7f7;color:#111;
             font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
@@ -19,21 +24,27 @@
   h1{font-size:28px;margin:12px 0}
   .sub{color:#555}
 
-  /* Giveaway highlight */
-  .giveaway{display:block;margin:12px 0 22px;background:linear-gradient(135deg,var(--gold1),var(--gold2));
-            color:#3b2a00;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.12);
-            padding:16px 18px;text-decoration:none}
+  /* Giveaway banner (brand colors) — whole bar is clickable */
+  .giveaway{
+    display:block;margin:12px 0 22px;
+    background:linear-gradient(135deg,var(--red1),var(--red2));
+    color:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.12);
+    padding:16px 18px;text-decoration:none
+  }
   .g-top{display:flex;gap:12px;align-items:center}
   .g-icon{width:34px;height:34px;flex:0 0 34px}
-  .g-title{font-weight:700;font-size:18px}
-  .g-cta{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:12px;background:#111;color:#fff;text-decoration:none}
+  .g-title{font-weight:800;font-size:18px;letter-spacing:.2px}
+  .giveaway:hover{filter:brightness(1.02)}
+  .giveaway:active{transform:translateY(1px)}
 
   .faces{display:grid;gap:16px}
   @media(min-width:640px){.faces{grid-template-columns:1fr 1fr}}
 
-  .face{display:flex;flex-direction:column;align-items:center;justify-content:center;
-        background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);
-        padding:32px;text-decoration:none;outline:none}
+  .face{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);
+    padding:32px;text-decoration:none;outline:none
+  }
   .caption{margin-top:10px;font-size:16px;color:#111}
   .face:focus-visible{box-shadow:0 0 0 3px rgba(15,111,255,.35)}
   .icon{width:88px;height:88px;display:block}
@@ -49,20 +60,18 @@
       <p class="sub">Tap an option to continue.</p>
     </header>
 
-    <!-- PROMO: Encourage private feedback -->
+    <!-- Promo banner (links to feedback page) -->
     <a class="giveaway" href="./feedback" aria-label="Send private feedback and enter to win">
       <div class="g-top">
-        <!-- gift icon -->
         <svg class="g-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path fill="#111" d="M20 7h-2.2a3 3 0 0 0-5.8 0H12a3 3 0 0 0-5.8 0H4a2 2 0 0 0-2 2v2h20V9a2 2 0 0 0-2-2Zm-9-1a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h3Zm7 0a1 1 0 1 1 0 2h-3a1 1 0 1 1 0-2h3ZM2 13h9v9H4a2 2 0 0 1-2-2v-7Zm11 0h9v7a2 2 0 0 1-2 2h-7v-9Z"/>
+          <path fill="#ffffff" d="M20 7h-2.2a3 3 0 0 0-5.8 0H12a3 3 0 0 0-5.8 0H4a2 2 0 0 0-2 2v2h20V9a2 2 0 0 0-2-2Zm-9-1a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h3Zm7 0a1 1 0 1 1 0 2h-3a1 1 0 1 1 0-2h3ZM2 13h9v9H4a2 2 0 0 1-2-2v-7Zm11 0h9v7a2 2 0 0 1-2 2h-7v-9Z"/>
         </svg>
         <div class="g-title">Share your feedback for a chance to win a $100 Visa Gift Card.</div>
       </div>
-      <span class="g-cta">Leave Feedback & Enter</span>
     </a>
 
     <section class="faces">
-      <!-- 🙂 GREEN → Google review (PASTE your real link) -->
+      <!-- 🙂 GREEN → Google review (paste your link) -->
       <a class="face" href="https://g.page/r/CUdrkKDLQTSFEAg/review" target="_blank" rel="noopener"
          aria-label="Satisfied — leave a Google review">
         <svg class="icon" viewBox="0 0 128 128" aria-hidden="true">
