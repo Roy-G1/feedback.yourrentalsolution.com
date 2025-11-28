@@ -3,97 +3,95 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>How was your experience? | Solutions Property Management</title>
+<title>Share Your Feedback | Solutions Property Management</title>
 <link rel="icon" type="image/png" href="logo.png?v=1">
 <style>
-  :root{
-    --green:#16a34a;
-    --orange:#f59e0b;
-    --red1:#ff5252;   /* light brand red */
-    --red2:#d11111;   /* deep brand red */
-  }
   *,*::before,*::after{box-sizing:border-box}
   html,body{margin:0;padding:0;width:100%;overflow-x:hidden;background:#f7f7f7;color:#111;
             font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-
   .wrap{max-width:720px;margin:0 auto;padding:32px 16px}
   @media(min-width:768px){.wrap{padding:40px 20px}}
 
   header{text-align:center;margin-bottom:18px}
-  .logo{max-width:220px;height:auto}
+  .logo{max-width:220px;height:auto;margin:8px 0 4px}
   h1{font-size:28px;margin:12px 0}
   .sub{color:#555}
 
-  /* Non-clickable giveaway banner (brand colors) */
-  .giveaway{
-    margin:12px 0 22px;
-    background:linear-gradient(135deg,var(--red1),var(--red2));
-    color:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.12);
-    padding:16px 18px
+  /* Brand banner */
+  .banner{margin:12px 0 22px;background:linear-gradient(135deg,#ff5252,#d11111);
+          color:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:14px 16px}
+  .banner strong{font-weight:800}
+
+  .card{background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);padding:20px}
+  @media(min-width:480px){.card{padding:24px}}
+
+  label{display:block;margin:10px 0 6px}
+  input[type=text],input[type=tel],input[type=email],textarea{
+    width:100%;max-width:100%;padding:12px;border:1px solid #ddd;border-radius:12px;font-size:16px
   }
-  .g-top{display:flex;gap:12px;align-items:center}
-  .g-icon{width:34px;height:34px;flex:0 0 34px}
-  .g-title{font-weight:800;font-size:18px;letter-spacing:.2px}
+  textarea{min-height:160px;resize:vertical}
 
-  .faces{display:grid;gap:16px}
-  @media(min-width:640px){.faces{grid-template-columns:1fr 1fr}}
+  .row{display:grid;gap:10px}
+  @media(min-width:540px){.row{grid-template-columns:1fr 1fr}}
 
-  .face{
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);
-    padding:32px;text-decoration:none;outline:none
-  }
-  .caption{margin-top:10px;font-size:16px;color:#111}
-  .face:focus-visible{box-shadow:0 0 0 3px rgba(15,111,255,.35)}
-  .icon{width:88px;height:88px;display:block}
-
-  footer{margin-top:26px;text-align:center;color:#666;font-size:12px}
+  .actions{margin-top:12px}
+  .btn{appearance:none;border:0;border-radius:12px;padding:14px 16px;cursor:pointer;
+       font-size:16px;background:#0f6fff;color:#fff}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <img src="logo.png" alt="Solutions Property Management" class="logo">
-      <h1>How was your experience?</h1>
-      <p class="sub">Tap an option to continue.</p>
-    </header>
+<div class="wrap">
+  <header>
+    <img src="logo.png" alt="Solutions Property Management" class="logo">
+    <h1>Share your feedback</h1>
+    <p class="sub">We read every message and follow up when requested.</p>
+  </header>
 
-    <!-- PROMO (not clickable) -->
-    <div class="giveaway" role="note" aria-label="Feedback drawing notice">
-      <div class="g-top">
-        <svg class="g-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path fill="#ffffff" d="M20 7h-2.2a3 3 0 0 0-5.8 0H12a3 3 0 0 0-5.8 0H4a2 2 0 0 0-2 2v2h20V9a2 2 0 0 0-2-2Zm-9-1a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h3Zm7 0a1 1 0 1 1 0 2h-3a1 1 0 1 1 0-2h3ZM2 13h9v9H4a2 2 0 0 1-2-2v-7Zm11 0h9v7a2 2 0 0 1-2 2h-7v-9Z"/>
-        </svg>
-        <div class="g-title">Share your feedback for a chance to win a $100 Visa Gift Card.</div>
-      </div>
-    </div>
-
-    <section class="faces">
-      <!-- 🙂 GREEN → Google review -->
-      <a class="face" href="https://g.page/r/CUdrkKDLQTSFEAg/review" target="_blank" rel="noopener"
-         aria-label="Satisfied — leave a Google review">
-        <svg class="icon" viewBox="0 0 128 128" aria-hidden="true">
-          <circle cx="64" cy="64" r="56" fill="#16a34a"/>
-          <circle cx="46" cy="55" r="6" fill="#111"/>
-          <circle cx="82" cy="55" r="6" fill="#111"/>
-          <path d="M42 78c8 10 36 10 44 0" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/>
-        </svg>
-        <span class="caption">Satisfied</span>
-      </a>
-
-      <!-- 😞 ORANGE → private feedback -->
-      <a class="face" href="./feedback" aria-label="Needs improvement — tell us what happened">
-        <svg class="icon" viewBox="0 0 128 128" aria-hidden="true">
-          <circle cx="64" cy="64" r="56" fill="#f59e0b"/>
-          <circle cx="46" cy="55" r="6" fill="#111"/>
-          <circle cx="82" cy="55" r="6" fill="#111"/>
-          <path d="M42 86c8-10 36-10 44 0" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/>
-        </svg>
-        <span class="caption">Needs improvement</span>
-      </a>
-    </section>
-
-    <footer>(605) 988-8496 • 517 W. 22nd Street, Sioux Falls, SD 57105</footer>
+  <div class="banner">
+    <strong>Enter to win a $100 Visa Gift Card.</strong> Winner selected on Dec 22.
   </div>
+
+  <div class="card">
+    <!-- Sends to feedback@yourrentalsolution.com via FormSubmit -->
+    <form id="fbForm" action="https://formsubmit.co/feedback@yourrentalsolution.com" method="POST">
+      <!-- FormSubmit settings -->
+      <input type="hidden" name="_subject" value="New Website Feedback">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" id="nextUrl" name="_next" value="">
+      <input type="text" name="_honey" style="display:none">
+
+      <label for="name">Name</label>
+      <input id="name" type="text" name="Name" required placeholder="e.g., Jane Doe" aria-required="true">
+
+      <div class="row">
+        <div>
+          <label for="phone">Phone/Cellphone</label>
+          <input id="phone" type="tel" name="Phone" required placeholder="e.g., 605-555-1234" aria-required="true"
+                 pattern="^[+0-9()\\-\\s]{7,}$" title="Please enter a valid phone number.">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="Email" required placeholder="e.g., jane@email.com" aria-required="true">
+        </div>
+      </div>
+
+      <label for="msg">Your feedback</label>
+      <textarea id="msg" name="Feedback" required placeholder="Type your message here..." aria-required="true"></textarea>
+
+      <div class="actions">
+        <button class="btn" type="submit">Send feedback</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // After submit, send to /thankyou on the same site (works on custom domain or github.io path)
+  (function () {
+    var root = location.pathname.replace(/\/[^\/]*$/, '/');
+    document.getElementById('nextUrl').value = location.origin + root + 'thankyou';
+  })();
+</script>
 </body>
 </html>
