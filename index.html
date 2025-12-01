@@ -3,68 +3,91 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>How was your experience? | Solutions Property Management</title>
+<title>Register to Share Feedback | Solutions Property Management</title>
 <link rel="icon" type="image/png" href="logo.png?v=1">
 <style>
-  :root{--green:#16a34a;--orange:#f59e0b}
   *,*::before,*::after{box-sizing:border-box}
   html,body{margin:0;padding:0;width:100%;overflow-x:hidden;background:#f7f7f7;color:#111;
             font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
   .wrap{max-width:720px;margin:0 auto;padding:32px 16px}
   @media(min-width:768px){.wrap{padding:40px 20px}}
+
   header{text-align:center;margin-bottom:18px}
-  .logo{max-width:220px;height:auto}
+  .logo{max-width:220px;height:auto;margin:8px 0 4px}
   h1{font-size:28px;margin:12px 0}
   .sub{color:#555}
 
-  .faces{display:grid;gap:16px}
-  @media(min-width:640px){.faces{grid-template-columns:1fr 1fr}}
-  .face{
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);
-    padding:32px;text-decoration:none;outline:none
-  }
-  .caption{margin-top:10px;font-size:16px;color:#111}
-  .face:focus-visible{box-shadow:0 0 0 3px rgba(15,111,255,.35)}
-  .icon{width:88px;height:88px;display:block}
+  .banner{margin:12px 0 22px;background:linear-gradient(135deg,#ff5252,#d11111);
+          color:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:14px 16px}
+  .banner strong{font-weight:800}
 
-  footer{margin-top:26px;text-align:center;color:#666;font-size:12px}
+  .card{background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);padding:20px}
+  @media(min-width:480px){.card{padding:24px}}
+
+  label{display:block;margin:10px 0 6px}
+  input[type=text],input[type=tel],input[type=email]{
+    width:100%;max-width:100%;padding:12px;border:1px solid #ddd;border-radius:12px;font-size:16px
+  }
+
+  .row{display:grid;gap:10px}
+  @media(min-width:540px){.row{grid-template-columns:1fr 1fr}}
+
+  .actions{margin-top:12px}
+  .btn{appearance:none;border:0;border-radius:12px;padding:14px 16px;cursor:pointer;
+       font-size:16px;background:#0f6fff;color:#fff}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <img src="logo.png" alt="Solutions Property Management" class="logo">
-      <h1>How was your experience?</h1>
-      <p class="sub">Tap an option to continue.</p>
-    </header>
+<div class="wrap">
+  <header>
+    <img src="logo.png" alt="Solutions Property Management" class="logo">
+    <h1>Register to share feedback</h1>
+    <p class="sub">Please provide your contact details below.</p>
+  </header>
 
-    <section class="faces">
-      <!-- 🙂 GREEN → Google review -->
-      <a class="face" href="https://g.page/r/CUdrkKDLQTSFEAg/review" target="_blank" rel="noopener"
-         aria-label="Satisfied — leave a Google review">
-        <svg class="icon" viewBox="0 0 128 128" aria-hidden="true">
-          <circle cx="64" cy="64" r="56" fill="#16a34a"/>
-          <circle cx="46" cy="55" r="6" fill="#111"/>
-          <circle cx="82" cy="55" r="6" fill="#111"/>
-          <path d="M42 78c8 10 36 10 44 0" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/>
-        </svg>
-        <span class="caption">Satisfied</span>
-      </a>
-
-      <!-- 😞 ORANGE → feedback page -->
-      <a class="face" href="./feedback" aria-label="Needs improvement — tell us what happened">
-        <svg class="icon" viewBox="0 0 128 128" aria-hidden="true">
-          <circle cx="64" cy="64" r="56" fill="#f59e0b"/>
-          <circle cx="46" cy="55" r="6" fill="#111"/>
-          <circle cx="82" cy="55" r="6" fill="#111"/>
-          <path d="M42 86c8-10 36-10 44 0" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/>
-        </svg>
-        <span class="caption">Needs improvement</span>
-      </a>
-    </section>
-
-    <footer>(605) 988-8496 • 517 W. 22nd Street, Sioux Falls, SD 57105</footer>
+  <div class="banner">
+    <strong>Enter to win a $100 Visa Gift Card.</strong> Winner selected on Dec 22.
   </div>
+
+  <div class="card">
+    <!-- Sends registration to feedback@yourrentalsolution.com, then goes to /rate -->
+    <form id="regForm" action="https://formsubmit.co/feedback@yourrentalsolution.com" method="POST">
+      <input type="hidden" name="_subject" value="New Registration — Feedback Drawing">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" id="nextUrl" name="_next" value="">
+      <input type="hidden" name="Form" value="Registration">
+      <input type="hidden" name="Raffle entry" value="Yes">
+      <input type="text" name="_honey" style="display:none">
+
+      <label for="name">Name</label>
+      <input id="name" type="text" name="Name" required placeholder="e.g., Jane Doe" aria-required="true">
+
+      <div class="row">
+        <div>
+          <label for="phone">Phone/Cellphone</label>
+          <input id="phone" type="tel" name="Phone" required placeholder="e.g., 605-555-1234"
+                 pattern="^[+0-9()\\-\\s]{7,}$" title="Please enter a valid phone number.">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="Email" required placeholder="e.g., you@example.com" aria-required="true">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn" type="submit">Continue</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // After registration, continue to /rate on the same site
+  (function () {
+    var root = location.pathname.replace(/\/[^\/]*$/, '/');
+    document.getElementById('nextUrl').value = location.origin + root + 'rate';
+  })();
+</script>
 </body>
 </html>
