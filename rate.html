@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>How was your experience? | Solutions Property Management</title>
+<link rel="icon" type="image/png" href="logo.png?v=1">
+<style>
+  :root{--green:#16a34a;--orange:#f59e0b}
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;width:100%;overflow-x:hidden;background:#f7f7f7;color:#111;
+            font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  .wrap{max-width:720px;margin:0 auto;padding:32px 16px}
+  @media(min-width:768px){.wrap{padding:40px 20px}}
+  header{text-align:center;margin-bottom:18px}
+  .logo{max-width:220px;height:auto}
+  h1{font-size:28px;margin:12px 0}
+  .sub{color:#555}
+  .faces{display:grid;gap:16px}
+  @media(min-width:640px){.faces{grid-template-columns:1fr 1fr}}
+  .face{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);
+    padding:32px;text-decoration:none;outline:none
+  }
+  .caption{margin-top:10px;font-size:16px;color:#111}
+  .face:focus-visible{box-shadow:0 0 0 3px rgba(15,111,255,.35)}
+  .icon{width:88px;height:88px;display:block}
+  footer{margin-top:26px;text-align:center;color:#666;font-size:12px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="logo.png" alt="Solutions Property Management" class="logo">
+      <h1>How was your experience?</h1>
+      <p class="sub">Tap an option to continue.</p>
+    </header>
+
+    <section class="faces">
+      <!-- 🙂 GREEN → Google review -->
+      <a class="face" href="https://g.page/r/CUdrkKDLQTSFEAg/review" target="_blank" rel="noopener"
+         aria-label="Satisfied — leave a Google review">
+        <svg class="icon" viewBox="0 0 128 128" aria-hidden="true">
+          <circle cx="64" cy="64" r="56" fill="#16a34a"/>
+          <circle cx="46" cy="55" r="6" fill="#111"/>
+          <circle cx="82" cy="55" r="6" fill="#111"/>
+          <path d="M42 78c8 10 36 10 44 0" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+        <span class="caption">Satisfied</span>
+      </a>
+
+      <!-- 😞 ORANGE → feedback form (emails you, then /thankyou) -->
+      <a class="face" href="./feedback" aria-label="Needs improvement — tell us what happened">
+        <svg class="icon" viewBox="0 0 128 128" aria-hidden="true">
+          <circle cx="64" cy="64" r="56" fill="#f59e0b"/>
+          <circle cx="46" cy="55" r="6" fill="#111"/>
+          <circle cx="82" cy="55" r="6" fill="#111"/>
+          <path d="M42 86c8-10 36-10 44 0" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+        <span class="caption">Needs improvement</span>
+      </a>
+    </section>
+
+    <footer>(605) 988-8496 • 517 W. 22nd Street, Sioux Falls, SD 57105</footer>
+  </div>
+</body>
+</html>
