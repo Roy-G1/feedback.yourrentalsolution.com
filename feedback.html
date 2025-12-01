@@ -30,6 +30,7 @@
 <body>
 <div class="wrap">
   <header>
+    <!-- Back goes to the smiley/sad page -->
     <a class="back" href="./rate">← Back</a>
     <img src="logo.png" alt="Solutions Property Management" class="logo">
     <h1>Tell us what happened</h1>
@@ -37,14 +38,13 @@
   </header>
 
   <div class="card">
+    <!-- Sends private feedback to feedback@yourrentalsolution.com, then goes to /thankyou -->
     <form id="fbForm" action="https://formsubmit.co/feedback@yourrentalsolution.com" method="POST">
       <input type="hidden" name="_subject" value="New Service Feedback — Needs improvement">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" id="nextUrl" name="_next" value="">
       <input type="hidden" name="Sentiment" value="Needs improvement">
-      <!-- TEMP: CC yourself to confirm delivery; remove after it works -->
-      <input type="hidden" name="_cc" value="mod.roykristoffer.galvan@gmail.com">
       <!-- honeypot -->
       <input type="text" name="_honey" style="display:none">
 
@@ -70,6 +70,7 @@
 </div>
 
 <script>
+  // After submit, go to /thankyou on the same site
   (function(){
     var root = location.pathname.replace(/\/[^\/]*$/, '/');
     document.getElementById('nextUrl').value = location.origin + root + 'thankyou';
