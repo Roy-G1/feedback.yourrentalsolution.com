@@ -30,7 +30,8 @@
 <body>
 <div class="wrap">
   <header>
-    <a class="back" href="#" onclick="return goHome()">← Back</a>
+    <!-- Back goes to the smiley/sad page -->
+    <a class="back" href="./rate">← Back</a>
     <img src="logo.png" alt="Solutions Property Management" class="logo">
     <h1>Tell us what happened</h1>
     <p>We read every message and follow up when requested.</p>
@@ -44,7 +45,6 @@
       <input type="hidden" name="_template" value="table">
       <input type="hidden" id="nextUrl" name="_next" value="">
       <input type="hidden" name="Sentiment" value="Needs improvement">
-      <!-- simple bot trap -->
       <input type="text" name="_honey" style="display:none">
 
       <label for="msg">Your feedback</label>
@@ -69,12 +69,7 @@
 </div>
 
 <script>
-  // Back → site root (works on github.io path and on custom domain)
-  function goHome(){
-    var home = location.pathname.replace(/\/[^\/]*$/, '/');
-    location.href = home; return false;
-  }
-  // Set _next = absolute URL to /thankyou on the current site
+  // After submit, go to /thankyou on the same site
   (function(){
     var root = location.pathname.replace(/\/[^\/]*$/, '/');
     document.getElementById('nextUrl').value = location.origin + root + 'thankyou';
