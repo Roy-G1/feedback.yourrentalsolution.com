@@ -18,6 +18,9 @@
   @media(min-width:480px){.card{padding:24px}}
   label{display:block;margin:10px 0 6px}
   textarea{width:100%;max-width:100%;min-height:180px;padding:12px;border:1px solid #ddd;border-radius:12px;font-size:16px}
+  input[type=text]{width:100%;max-width:100%;padding:12px;border:1px solid #ddd;border-radius:12px;font-size:16px}
+  .row{display:grid;gap:10px}
+  @media(min-width:720px){.row{grid-template-columns:1fr 1fr 1fr}}
   .actions{margin-top:12px}
   .btn{appearance:none;border:0;border-radius:12px;padding:14px 16px;cursor:pointer;
        font-size:16px;background:#0f6fff;color:#fff}
@@ -47,6 +50,27 @@
       <label for="msg">Your feedback</label>
       <textarea id="msg" name="Feedback" required placeholder="Type your message here..."></textarea>
 
+      <div class="row">
+        <div>
+          <label for="name">Name <span style="color:#888">(optional)</span></label>
+          <input id="name" type="text" name="Name" placeholder="e.g., Jane Doe">
+        </div>
+
+        <div>
+          <label for="contact">Best contact (phone or email) <span style="color:#d11">*</span></label>
+          <input id="contact" type="text" name="Best contact" required
+                 placeholder="e.g., 605-555-1234 or jane@email.com"
+                 pattern="^(.+@.+\..+|[+0-9()\-.\s]{7,})$"
+                 title="Enter a valid email (name@example.com) or phone number.">
+        </div>
+
+        <div>
+          <label for="property">Property <span style="color:#d11">*</span></label>
+          <input id="property" type="text" name="Property" required
+                 placeholder="Community or address (e.g., Diamond Valley Apts or 123 Main St)">
+        </div>
+      </div>
+
       <div class="actions">
         <button class="btn" type="submit">Send feedback</button>
       </div>
@@ -55,7 +79,7 @@
 </div>
 
 <script>
-  // After submit, go to /thankyou on the same site (works on custom domain or github.io path)
+  // After submit, go to /thankyou on the same site
   (function(){
     var root = location.pathname.replace(/\/[^\/]*$/, '/');
     document.getElementById('nextUrl').value = location.origin + root + 'thankyou';
