@@ -39,6 +39,9 @@
   <div class="card">
     <!-- Sends private feedback to feedback@yourrentalsolution.com, then goes to /thankyou -->
     <form id="fbForm" action="https://formsubmit.co/feedback@yourrentalsolution.com" method="POST">
+           <input type="hidden" name="_webhook"
+             value="https://script.google.com/macros/s/AKfycbwQDcPO7ajxnFS18DVgAeVBx2tXogNCIdB8lmWyLmHcTp2BMjUuX5QH5UOnQ8q8-TwEJw/exec">
+      <input type="hidden" name="Form" value="Feedback">
       <input type="hidden" name="_subject" value="New Service Feedback — Needs improvement">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
