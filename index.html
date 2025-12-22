@@ -15,6 +15,7 @@
   .logo{max-width:220px;height:auto;margin:8px 0 4px}
   h1{font-size:28px;margin:12px 0}
   .sub{color:#555}
+  /* .banner styles left here intentionally; element removed below */
   .banner{margin:12px 0 22px;background:linear-gradient(135deg,#ff5252,#d11111);
           color:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:14px 16px}
   .banner strong{font-weight:800}
@@ -39,14 +40,10 @@
     <p class="sub">Please provide your contact details below.</p>
   </header>
 
-  <div class="banner">
-    <strong>Enter to win a $100 Visa Gift Card.</strong> Winner selected on Dec 22.
-  </div>
-
   <div class="card">
     <!-- Sends registration to feedback@yourrentalsolution.com, then goes to /rate -->
     <form id="regForm" action="https://formsubmit.co/feedback@yourrentalsolution.com" method="POST">
-     <input type="hidden" name="_webhook" value="https://script.google.com/macros/s/AKfycbwQDcPO7ajxnFS18DVgAeVBx2tXogNCIdB8lmWyLmHcTp2BMjUuX5QH5UOnQ8q8-TwEJw/exec">
+      <input type="hidden" name="_webhook" value="https://script.google.com/macros/s/AKfycbwQDcPO7ajxnFS18DVgAeVBx2tXogNCIdB8lmWyLmHcTp2BMjUuX5QH5UOnQ8q8-TwEJw/exec">
       <input type="hidden" name="_subject" value="New Registration — Feedback Drawing">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
