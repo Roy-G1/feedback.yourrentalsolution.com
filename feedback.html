@@ -39,8 +39,7 @@
   <div class="card">
     <!-- Sends private feedback to feedback@yourrentalsolution.com, then goes to /thankyou -->
     <form id="fbForm" action="https://formsubmit.co/feedback@yourrentalsolution.com" method="POST">
-           <input type="hidden" name="_webhook"
-             value="https://script.google.com/macros/s/AKfycbwQDcPO7ajxnFS18DVgAeVBx2tXogNCIdB8lmWyLmHcTp2BMjUuX5QH5UOnQ8q8-TwEJw/exec">
+      <input type="hidden" name="_webhook" value="https://script.google.com/macros/s/AKfycbwQDcPO7ajxnFS18DVgAeVBx2tXogNCIdB8lmWyLmHcTp2BMjUuX5QH5UOnQ8q8-TwEJw/exec">
       <input type="hidden" name="Form" value="Feedback">
       <input type="hidden" name="_subject" value="New Service Feedback — Needs improvement">
       <input type="hidden" name="_captcha" value="false">
@@ -50,29 +49,28 @@
       <!-- honeypot -->
       <input type="text" name="_honey" style="display:none">
 
-      <label for="msg">Your feedback</label>
-      <textarea id="msg" name="Feedback" required placeholder="Type your message here..."></textarea>
-
+      <!-- MOVED TO TOP & requirement changes -->
       <div class="row">
         <div>
-          <label for="name">Name <span style="color:#888">(optional)</span></label>
-          <input id="name" type="text" name="Name" placeholder="e.g., Jane Doe">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="Name" required placeholder="e.g., Jane Doe">
         </div>
 
         <div>
-          <label for="contact">Contact (phone or email) <span style="color:#d11">*</span></label>
-          <input id="contact" type="text" name="Best contact" required
-                 placeholder="e.g., 605-555-1234 or jane@email.com"
-                 pattern="^(.+@.+\..+|[+0-9()\-.\s]{7,})$"
-                 title="Enter a valid email (name@example.com) or phone number.">
+          <label for="contact">Contact (phone or email) <span style="color:#888">(optional)</span></label>
+          <input id="contact" type="text" name="Best contact"
+                 placeholder="e.g., 605-555-1234 or jane@email.com">
         </div>
 
         <div>
-          <label for="property">Property <span style="color:#d11">*</span></label>
-          <input id="property" type="text" name="Property" required
+          <label for="property">Property <span style="color:#888">(optional)</span></label>
+          <input id="property" type="text" name="Property"
                  placeholder="Community or address (e.g., Diamond Valley Apts or 123 Main St)">
         </div>
       </div>
+
+      <label for="msg" style="margin-top:12px">Your feedback</label>
+      <textarea id="msg" name="Feedback" required placeholder="Type your message here..."></textarea>
 
       <div class="actions">
         <button class="btn" type="submit">Send feedback</button>
