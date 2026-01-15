@@ -17,10 +17,13 @@
   .card{background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);padding:20px}
   @media(min-width:480px){.card{padding:24px}}
   label{display:block;margin:10px 0 6px}
+  .req{color:#d11111;margin-left:4px}  /* red asterisk */
   textarea{width:100%;max-width:100%;min-height:180px;padding:12px;border:1px solid #ddd;border-radius:12px;font-size:16px}
   input[type=text]{width:100%;max-width:100%;padding:12px;border:1px solid #ddd;border-radius:12px;font-size:16px}
   .row{display:grid;gap:10px}
-  @media(min-width:720px){.row{grid-template-columns:1fr 1fr 1fr}}
+  /* On wide screens: two columns; Property will span both */
+  @media(min-width:720px){.row{grid-template-columns:1fr 1fr}}
+  .span-2{grid-column:1 / -1}
   .actions{margin-top:12px}
   .btn{appearance:none;border:0;border-radius:12px;padding:14px 16px;cursor:pointer;
        font-size:16px;background:#0f6fff;color:#fff}
@@ -49,20 +52,20 @@
       <!-- honeypot -->
       <input type="text" name="_honey" style="display:none">
 
-      <!-- MOVED TO TOP & requirement changes -->
+      <!-- Name & Contact (row 1), Property full-width (row 2) -->
       <div class="row">
         <div>
-          <label for="name">Name</label>
-          <input id="name" type="text" name="Name" required placeholder="e.g., Jane Doe">
+          <label for="name">Name<span class="req">*</span></label>
+          <input id="name" type="text" name="Name" required placeholder="e.g., Jane Doe" aria-required="true">
         </div>
 
         <div>
-          <label for="contact">Contact <span style="color:#888">(optional)</span></label>
+          <label for="contact">Contact (phone or email) <span style="color:#888">(optional)</span></label>
           <input id="contact" type="text" name="Best contact"
                  placeholder="e.g., 605-555-1234 or jane@email.com">
         </div>
 
-        <div>
+        <div class="span-2">
           <label for="property">Property <span style="color:#888">(optional)</span></label>
           <input id="property" type="text" name="Property"
                  placeholder="Community or address (e.g., Diamond Valley Apts or 123 Main St)">
