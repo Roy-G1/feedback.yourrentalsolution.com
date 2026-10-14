@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,54 +6,298 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>How satisfied are you with our service? | Solutions Property Management</title>
 <link rel="icon" type="image/png" href="SPM logo transparent BG.png?v=1">
+
 <style>
-  :root{--green:#16a34a;--orange:#f59e0b}
-  *,*::before,*::after{box-sizing:border-box}
-  html,body{margin:0;padding:0;width:100%;overflow-x:hidden;background:#f7f7f7;color:#111;
-            font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-  .wrap{max-width:720px;margin:0 auto;padding:32px 16px}
-  @media(min-width:768px){.wrap{padding:40px 20px}}
-  header{text-align:center;margin-bottom:18px}
-  .logo{max-width:220px;height:auto}
-  h1{font-size:28px;margin:12px 0}
-  .sub{color:#555}
-  .faces{display:grid;gap:16px}
-  @media(min-width:640px){.faces{grid-template-columns:1fr 1fr}}
-  .face{
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);
-    padding:32px;text-decoration:none;outline:none
+  :root{
+    --green:#16a34a;
+    --orange:#f59e0b;
+    --brand-red:#fa0000;
   }
-  .caption{margin-top:10px;font-size:16px;color:#111}
-  .face:focus-visible{box-shadow:0 0 0 3px rgba(15,111,255,.35)}
-  .icon{width:88px;height:88px;display:block;object-fit:contain;border-radius:50%}
-  footer{margin-top:26px;text-align:center;color:#666;font-size:12px}
+
+  *,*::before,*::after{box-sizing:border-box}
+
+  html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    overflow-x:hidden;
+    background:#f7f7f7;
+    color:#111;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  }
+
+  .wrap{
+    max-width:820px;
+    margin:0 auto;
+    padding:32px 16px;
+  }
+
+  @media(min-width:768px){
+    .wrap{padding:40px 20px}
+  }
+
+  header{
+    text-align:center;
+    margin-bottom:18px;
+  }
+
+  .logo{
+    max-width:220px;
+    height:auto;
+  }
+
+  /* $100 Gift Certificate Banner */
+
+  .promo{
+    background:var(--brand-red);
+    color:#fff;
+    border-radius:16px;
+    padding:25px 20px;
+    text-align:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+    margin-bottom:20px;
+  }
+
+  .promo-heading{
+    font-size:16px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    line-height:1.5;
+  }
+
+  .promo-prize{
+    font-size:40px;
+    font-weight:800;
+    margin:10px 0;
+    line-height:1.2;
+  }
+
+  .promo-date{
+    font-size:16px;
+    font-weight:500;
+    margin:0;
+  }
+
+  /* Honest Feedback Message */
+
+  .feedback-note{
+    text-align:center;
+    margin:0 auto 25px;
+    max-width:690px;
+  }
+
+  .feedback-note h2{
+    font-size:20px;
+    margin:0 0 8px;
+  }
+
+  .feedback-note p{
+    font-size:15px;
+    line-height:1.6;
+    color:#555;
+    margin:0;
+  }
+
+  .divider{
+    border:0;
+    border-top:1px solid #e5e5e5;
+    margin:0 0 24px;
+  }
+
+  /* Satisfaction Question */
+
+  .question{
+    text-align:center;
+    margin-bottom:20px;
+  }
+
+  h1{
+    font-size:28px;
+    margin:12px 0;
+  }
+
+  .sub{
+    color:#555;
+  }
+
+  /* Feedback Options */
+
+  .faces{
+    display:grid;
+    gap:16px;
+  }
+
+  @media(min-width:640px){
+    .faces{
+      grid-template-columns:1fr 1fr;
+    }
+  }
+
+  .face{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+    padding:32px;
+    text-decoration:none;
+    outline:none;
+    min-height:190px;
+  }
+
+  .caption{
+    margin-top:10px;
+    font-size:16px;
+    color:#111;
+  }
+
+  .face:focus-visible{
+    box-shadow:0 0 0 3px rgba(15,111,255,.35);
+  }
+
+  .icon{
+    width:100px;
+    height:100px;
+    display:block;
+    object-fit:contain;
+    border-radius:50%;
+  }
+
+  footer{
+    margin-top:26px;
+    text-align:center;
+    color:#666;
+    font-size:12px;
+  }
+
+  /* Mobile Adjustments */
+
+  @media(max-width:480px){
+
+    .promo{
+      padding:22px 16px;
+    }
+
+    .promo-heading{
+      font-size:14px;
+    }
+
+    .promo-prize{
+      font-size:30px;
+    }
+
+    .promo-date{
+      font-size:14px;
+    }
+
+    .feedback-note h2{
+      font-size:18px;
+    }
+
+    .feedback-note p{
+      font-size:14px;
+    }
+
+    h1{
+      font-size:24px;
+    }
+
+    .icon{
+      width:88px;
+      height:88px;
+    }
+  }
 </style>
 </head>
+
 <body>
   <div class="wrap">
+
+    <!-- Company Logo -->
     <header>
-      <img src="SPM logo transparent BG.png" alt="Solutions Property Management" class="logo">
-      <h1>How satisfied are you with our service?</h1>
-      <p class="sub">Tap an option to continue.</p>
+      <img
+        src="SPM logo transparent BG.png"
+        alt="Solutions Property Management"
+        class="logo">
     </header>
 
+    <!-- Gift Certificate Banner -->
+    <section class="promo">
+      <div class="promo-heading">
+        Share Your Honest Feedback for a Chance to Win!
+      </div>
+
+      <div class="promo-prize">
+        $100 Gift Certificate
+      </div>
+
+      <p class="promo-date">
+        First Drawing: December 2026
+      </p>
+    </section>
+
+    <!-- Honest Feedback Message -->
+    <section class="feedback-note">
+      <h2>Your honest opinion matters.</h2>
+
+      <p>
+        We welcome feedback of every kind, positive or negative.
+        Your experience helps us see what's working and
+        where we can do better.
+      </p>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Satisfaction Question -->
+    <div class="question">
+      <h1>How satisfied are you with our service?</h1>
+      <p class="sub">Tap an option to continue.</p>
+    </div>
+
+    <!-- Feedback Options -->
     <section class="faces">
-      <!-- 🙂 GREEN → Google review -->
-      <a class="face" href="https://g.page/r/CUdrkKDLQTSFEAg/review" target="_blank" rel="noopener"
-         aria-label="Satisfied — leave a Google review">
-        <img class="icon" src="Smile.png?v=1" alt="Smiling face">
+
+      <!-- Satisfied - Google Review -->
+      <a
+        class="face"
+        href="https://g.page/r/CUdrkKDLQTSFEAg/review"
+        target="_blank"
+        rel="noopener"
+        aria-label="Satisfied — leave a Google review">
+
+        <img
+          class="icon"
+          src="Smile.png?v=1"
+          alt="Smiling face">
+
         <span class="caption">Satisfied</span>
       </a>
 
-      <!-- 😞 ORANGE → feedback form -->
-      <a class="face" href="./feedback" aria-label="Needs improvement — tell us what happened">
-        <img class="icon" src="Sad.png?v=1" alt="Unhappy face">
+      <!-- Needs Improvement - Feedback Form -->
+      <a
+        class="face"
+        href="./feedback"
+        aria-label="Needs improvement — tell us what happened">
+
+        <img
+          class="icon"
+          src="Sad.png?v=1"
+          alt="Unhappy face">
+
         <span class="caption">Needs improvement</span>
       </a>
+
     </section>
 
-    <footer>(605) 988-8496 • 517 W. 22nd Street, Sioux Falls, SD 57105</footer>
+    <!-- Company Contact Information -->
+    <footer>
+      (605) 988-8496 • 517 W. 22nd Street, Sioux Falls, SD 57105
+    </footer>
+
   </div>
 </body>
 </html>
